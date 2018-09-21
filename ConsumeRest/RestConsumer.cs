@@ -66,8 +66,9 @@ namespace ConsumeRest
         public RestData Post(RestData restData)
         {
             String json = JsonConvert.SerializeObject(restData);
-            StringContent content = new StringContent(json);
-            content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            StringContent content = new StringContent(json, Encoding.UTF8, "application/json");
+            //Man kan enten tilføje Encoding.UTF8, "application/json" ovenfor, eller skrive nedenstående linje.
+            //content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
             using (HttpClient client = new HttpClient())
             {
