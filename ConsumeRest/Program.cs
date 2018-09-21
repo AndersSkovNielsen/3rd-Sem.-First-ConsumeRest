@@ -6,7 +6,10 @@ namespace ConsumeRest
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            RestConsumer consumer = new RestConsumer();
+            consumer.Start();
+
+            Console.ReadLine();
         }
     }
 }
